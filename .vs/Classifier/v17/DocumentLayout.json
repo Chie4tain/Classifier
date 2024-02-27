@@ -3,23 +3,27 @@
   "WorkspaceRootPath": "E:\\vs_projects\\Classifier\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\myobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:myobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\myobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:myobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,29 +42,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MyObject.cs",
               "DocumentMoniker": "E:\\vs_projects\\Classifier\\MyObject.cs",
               "RelativeDocumentMoniker": "MyObject.cs",
               "ToolTip": "E:\\vs_projects\\Classifier\\MyObject.cs",
               "RelativeToolTip": "MyObject.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAWwE0AAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T18:16:20.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "E:\\vs_projects\\Classifier\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "E:\\vs_projects\\Classifier\\MainForm.cs",
-              "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAIA0wDkAAAAeAAAA",
+              "DocumentIndex": 2,
+              "Title": "HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\HelloForm.cs",
+              "RelativeDocumentMoniker": "HelloForm.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T17:57:41.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-20T17:21:12.543Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
@@ -76,7 +79,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Perceptron.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\Perceptron.cs",
+              "RelativeDocumentMoniker": "Perceptron.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\Perceptron.cs",
+              "RelativeToolTip": "Perceptron.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T15:23:45.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AQIAAHEAAAAAAAAAAAAAAEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T17:57:41.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HelloForm.cs",
               "DocumentMoniker": "E:\\vs_projects\\Classifier\\HelloForm.cs",
               "RelativeDocumentMoniker": "HelloForm.cs",
@@ -86,18 +115,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T17:22:19.215Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "E:\\vs_projects\\Classifier\\HelloForm.cs",
-              "RelativeDocumentMoniker": "HelloForm.cs",
-              "ToolTip": "E:\\vs_projects\\Classifier\\HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T17:21:12.543Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]
         }

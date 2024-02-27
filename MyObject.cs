@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Classifier
 {
@@ -16,6 +14,7 @@ namespace Classifier
     }
     public class CLassCharacteristics
     {
+        string[] Characters = {"Average", "Variance", "Inter Class Distance" };
         Characteristics characteristics1stClass = new Characteristics();
         Characteristics characteristics2stClass = new Characteristics();
 
@@ -36,7 +35,7 @@ namespace Classifier
 
         public void SetChars()
         {
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 switch (i)
                 {
@@ -62,7 +61,7 @@ namespace Classifier
                         }
                         break;
                 }
-                
+
             }
 
             WeightIntraClassDistance = objects.CalculateIntraClassDistance(1, 2, arr[0]);
@@ -76,17 +75,17 @@ namespace Classifier
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)
                 {
-                    if(i == 0)
-                        result += characteristics1stClass.Weight[j].ToString() + " ";
-                    if(i == 1)
-                        result += characteristics1stClass.Height[j].ToString() + " ";
+                    if (i == 0)
+                        result += "Weight -> " + Characters[j] + ": " + characteristics1stClass.Weight[j].ToString() + " \n";
+                    if (i == 1)
+                        result += "Height -> " + Characters[j] + ": " + characteristics1stClass.Height[j].ToString() + " \n";
                     if (i == 2)
-                        result += characteristics1stClass.Age[j].ToString() + " ";
+                        result += "Age -> " + Characters[j] + ": " + characteristics1stClass.Age[j].ToString() + " \n";
                 }
-                
 
-            result += "\n" + WeightIntraClassDistance.ToString() + 
-                " " + HeightIntraClassDistance.ToString() + " " + AgeIntraClassDistance.ToString();
+
+            result += "\n" + "Intra Class Distance of Weight: " + WeightIntraClassDistance.ToString() +
+                " Intra Class Distance of Height: " + HeightIntraClassDistance.ToString() + "\n" + "Intra Class Distance of Age: " + AgeIntraClassDistance.ToString();
             return result;
         }
     }
@@ -97,7 +96,7 @@ namespace Classifier
         public double Height { get; set; }
         public int Age { get; set; }
 
-        public MyObject(int _class = 0, double _weight = 0, double _height = 0, int _age = 0)
+        public MyObject(int _class = 1, double _weight = 0, double _height = 0, int _age = 0)
         {
             Class = _class;
             Weight = _weight;

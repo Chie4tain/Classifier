@@ -51,9 +51,11 @@
             // 
             // PbGerb
             // 
+            this.PbGerb.Image = global::Classifier.Properties.Resources.ssmu;
             this.PbGerb.Location = new System.Drawing.Point(461, 64);
             this.PbGerb.Name = "PbGerb";
             this.PbGerb.Size = new System.Drawing.Size(295, 250);
+            this.PbGerb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbGerb.TabIndex = 1;
             this.PbGerb.TabStop = false;
             // 
