@@ -2,10 +2,10 @@
 
 namespace Classifier
 {
-    public class Perceptron
+    public class Perceptron : IClassifier
     {
         private int numberOfInputs;
-        private double[] weights;
+        public double[] weights;
         private double bias;
         private double learningRate;
 
@@ -70,7 +70,7 @@ namespace Classifier
             }
         }
 
-        public int Predict(MyObject obj)
+        public int Classify(MyObject obj)
         {
             double[] inputs = new double[] { obj.Weight, obj.Height, obj.Age };
             double sum = DotProduct(inputs) + bias;

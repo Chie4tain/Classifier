@@ -35,33 +35,41 @@ namespace Classifier
 
         public void SetChars()
         {
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 1; i < 3; i++)
             {
-                switch (i)
+                Characteristics charact = new Characteristics();
+                if (i == 1)
+                    charact = characteristics1stClass;
+                else
+                    charact = characteristics2stClass;
+                for (int j = 0; j < arr.Length; j++)
                 {
-                    case 0:
-                        {
-                            characteristics1stClass.Weight[0] = objects.CalculateAverage(1, arr[0]);
-                            characteristics1stClass.Weight[1] = objects.CalculateVariance(1, characteristics1stClass.Weight[0], arr[0]);
-                            characteristics1stClass.Weight[2] = objects.CalculateInterClassDistance(1, arr[0]);
-                        }
-                        break;
-                    case 1:
-                        {
-                            characteristics1stClass.Height[0] = objects.CalculateAverage(1, arr[1]);
-                            characteristics1stClass.Height[1] = objects.CalculateVariance(1, characteristics1stClass.Height[0], arr[1]);
-                            characteristics1stClass.Height[2] = objects.CalculateInterClassDistance(1, arr[1]);
-                        }
-                        break;
-                    case 2:
-                        {
-                            characteristics1stClass.Age[0] = objects.CalculateAverage(1, arr[2]);
-                            characteristics1stClass.Age[1] = objects.CalculateVariance(1, characteristics1stClass.Age[0], arr[2]);
-                            characteristics1stClass.Age[2] = objects.CalculateInterClassDistance(1, arr[2]);
-                        }
-                        break;
-                }
+                    switch (j)
+                    {
+                        case 0:
+                            {
+                                charact.Weight[0] = objects.CalculateAverage(i, arr[0]);
+                                charact.Weight[1] = objects.CalculateVariance(i, charact.Weight[0], arr[0]);
+                                charact.Weight[2] = objects.CalculateInterClassDistance(i, arr[0]);
+                            }
+                            break;
+                        case 1:
+                            {
+                                charact.Height[0] = objects.CalculateAverage(i, arr[1]);
+                                charact.Height[1] = objects.CalculateVariance(i, charact.Height[0], arr[1]);
+                                charact.Height[2] = objects.CalculateInterClassDistance(i, arr[1]);
+                            }
+                            break;
+                        case 2:
+                            {
+                                charact.Age[0] = objects.CalculateAverage(i, arr[2]);
+                                charact.Age[1] = objects.CalculateVariance(i, charact.Age[0], arr[2]);
+                                charact.Age[2] = objects.CalculateInterClassDistance(i, arr[2]);
+                            }
+                            break;
+                    }
 
+                }
             }
 
             WeightIntraClassDistance = objects.CalculateIntraClassDistance(1, 2, arr[0]);
@@ -72,20 +80,33 @@ namespace Classifier
         public string returndata()
         {
             string result = "";
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < 2; i++)
+            {
+                Characteristics charact = new Characteristics();
+                if (i == 0)
                 {
-                    if (i == 0)
-                        result += "Weight -> " + Characters[j] + ": " + characteristics1stClass.Weight[j].ToString() + " \n";
-                    if (i == 1)
-                        result += "Height -> " + Characters[j] + ": " + characteristics1stClass.Height[j].ToString() + " \n";
-                    if (i == 2)
-                        result += "Age -> " + Characters[j] + ": " + characteristics1stClass.Age[j].ToString() + " \n";
+                    charact = characteristics1stClass;
+                    result += "1st Class\n";
                 }
+                else
+                {
+                    charact = characteristics2stClass;
+                    result += "2nd Class\n";
+                }
+                for (int k = 0; k < 3; k++)
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (k == 0)
+                            result += "Weight -> " + Characters[j] + ": " + charact.Weight[j].ToString() + " \n";
+                        if (k == 1)
+                            result += "Height -> " + Characters[j] + ": " + charact.Height[j].ToString() + " \n";
+                        if (k == 2)
+                            result += "Age -> " + Characters[j] + ": " + charact.Age[j].ToString() + " \n";
+                    }
+            }
 
-
-            result += "\n" + "Intra Class Distance of Weight: " + WeightIntraClassDistance.ToString() +
-                " Intra Class Distance of Height: " + HeightIntraClassDistance.ToString() + "\n" + "Intra Class Distance of Age: " + AgeIntraClassDistance.ToString();
+            result += "\n" + "Intra Class Distance of Weight: " + WeightIntraClassDistance.ToString() + "\n" +
+                "Intra Class Distance of Height: " + HeightIntraClassDistance.ToString() + "\n" + "Intra Class Distance of Age: " + AgeIntraClassDistance.ToString();
             return result;
         }
     }

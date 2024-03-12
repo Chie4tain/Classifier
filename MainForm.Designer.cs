@@ -50,11 +50,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPredict = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblweights = new System.Windows.Forms.Label();
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.lblpercParams = new System.Windows.Forms.Label();
+            this.lblmindistParams = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -70,28 +76,28 @@
             this.helpToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(1379, 30);
+            this.MainMenu.Size = new System.Drawing.Size(1463, 30);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -139,17 +145,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(981, 421);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(1147, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 29);
+            this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 3;
             // 
             // btnStart
             // 
             this.btnStart.Enabled = false;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnStart.Location = new System.Drawing.Point(12, 529);
+            this.btnStart.Location = new System.Drawing.Point(12, 591);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(277, 63);
             this.btnStart.TabIndex = 4;
@@ -160,9 +166,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.button1.Location = new System.Drawing.Point(1151, 529);
+            this.button1.Location = new System.Drawing.Point(1235, 600);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 63);
+            this.button1.Size = new System.Drawing.Size(216, 54);
             this.button1.TabIndex = 5;
             this.button1.Text = "CLose";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,7 +178,7 @@
             // 
             this.btnTrain.Enabled = false;
             this.btnTrain.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnTrain.Location = new System.Drawing.Point(444, 529);
+            this.btnTrain.Location = new System.Drawing.Point(444, 591);
             this.btnTrain.Name = "btnTrain";
             this.btnTrain.Size = new System.Drawing.Size(277, 63);
             this.btnTrain.TabIndex = 6;
@@ -183,7 +189,7 @@
             // textBoxHeight
             // 
             this.textBoxHeight.Enabled = false;
-            this.textBoxHeight.Location = new System.Drawing.Point(1165, 313);
+            this.textBoxHeight.Location = new System.Drawing.Point(1249, 131);
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(100, 22);
             this.textBoxHeight.TabIndex = 7;
@@ -191,7 +197,7 @@
             // textBoxWeight
             // 
             this.textBoxWeight.Enabled = false;
-            this.textBoxWeight.Location = new System.Drawing.Point(1059, 313);
+            this.textBoxWeight.Location = new System.Drawing.Point(1143, 131);
             this.textBoxWeight.Name = "textBoxWeight";
             this.textBoxWeight.Size = new System.Drawing.Size(100, 22);
             this.textBoxWeight.TabIndex = 8;
@@ -199,7 +205,7 @@
             // textBoxAge
             // 
             this.textBoxAge.Enabled = false;
-            this.textBoxAge.Location = new System.Drawing.Point(1267, 313);
+            this.textBoxAge.Location = new System.Drawing.Point(1351, 131);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(100, 22);
             this.textBoxAge.TabIndex = 9;
@@ -207,7 +213,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1056, 294);
+            this.label3.Location = new System.Drawing.Point(1140, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 10;
@@ -216,7 +222,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1162, 294);
+            this.label4.Location = new System.Drawing.Point(1246, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 11;
@@ -225,7 +231,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1264, 294);
+            this.label5.Location = new System.Drawing.Point(1348, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 16);
             this.label5.TabIndex = 12;
@@ -233,25 +239,55 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label6.Location = new System.Drawing.Point(932, 251);
+            this.label6.Location = new System.Drawing.Point(1138, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(447, 29);
+            this.label6.Size = new System.Drawing.Size(313, 61);
             this.label6.TabIndex = 13;
             this.label6.Text = "Enter object parameters for classification";
             // 
             // btnPredict
             // 
             this.btnPredict.Enabled = false;
-            this.btnPredict.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnPredict.Location = new System.Drawing.Point(1059, 360);
+            this.btnPredict.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPredict.Location = new System.Drawing.Point(1143, 159);
             this.btnPredict.Name = "btnPredict";
-            this.btnPredict.Size = new System.Drawing.Size(308, 48);
+            this.btnPredict.Size = new System.Drawing.Size(308, 39);
             this.btnPredict.TabIndex = 14;
-            this.btnPredict.Text = "Predict";
+            this.btnPredict.Text = "Predict by perceptron";
             this.btnPredict.UseVisualStyleBackColor = true;
             this.btnPredict.Click += new System.EventHandler(this.btnPredict_Click);
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button2.Location = new System.Drawing.Point(1143, 249);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(308, 39);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Predict by min Distance";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(1147, 300);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 25);
+            this.label7.TabIndex = 15;
+            // 
+            // lblweights
+            // 
+            this.lblweights.AutoSize = true;
+            this.lblweights.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblweights.Location = new System.Drawing.Point(441, 541);
+            this.lblweights.Name = "lblweights";
+            this.lblweights.Size = new System.Drawing.Size(75, 20);
+            this.lblweights.TabIndex = 17;
+            this.lblweights.Text = "Weights:";
             // 
             // classDataGridViewTextBoxColumn
             // 
@@ -287,11 +323,47 @@
             // 
             this.bindingSource.DataSource = typeof(Classifier.MyObjects);
             // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.button3.Location = new System.Drawing.Point(746, 591);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(277, 63);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Recognition quality";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lblpercParams
+            // 
+            this.lblpercParams.AutoSize = true;
+            this.lblpercParams.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblpercParams.Location = new System.Drawing.Point(1139, 344);
+            this.lblpercParams.Name = "lblpercParams";
+            this.lblpercParams.Size = new System.Drawing.Size(0, 20);
+            this.lblpercParams.TabIndex = 19;
+            // 
+            // lblmindistParams
+            // 
+            this.lblmindistParams.AutoSize = true;
+            this.lblmindistParams.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblmindistParams.Location = new System.Drawing.Point(1139, 459);
+            this.lblmindistParams.Name = "lblmindistParams";
+            this.lblmindistParams.Size = new System.Drawing.Size(0, 20);
+            this.lblmindistParams.TabIndex = 20;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 604);
+            this.ClientSize = new System.Drawing.Size(1463, 666);
+            this.Controls.Add(this.lblmindistParams);
+            this.Controls.Add(this.lblpercParams);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.lblweights);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnPredict);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -348,5 +420,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPredict;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblweights;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblpercParams;
+        private System.Windows.Forms.Label lblmindistParams;
     }
 }
