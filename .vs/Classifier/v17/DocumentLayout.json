@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "E:\\vs_projects\\Classifier\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\qualityassessment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\predictionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:predictionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\predictionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:predictionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\qualityassessment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:qualityassessment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\mindistanceclassifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mindistanceclassifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\myobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +29,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\chars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:chars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|e:\\vs_projects\\classifier\\perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\mindistanceclassifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|solutionrelative:mindistanceclassifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3F16946-76B5-4587-B0EF-E251E6E8AE3F}|Classifier.csproj|E:\\vs_projects\\Classifier\\helloform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,27 +63,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "QualityAssessment.cs",
-              "DocumentMoniker": "E:\\vs_projects\\Classifier\\QualityAssessment.cs",
-              "RelativeDocumentMoniker": "QualityAssessment.cs",
-              "ToolTip": "E:\\vs_projects\\Classifier\\QualityAssessment.cs",
-              "RelativeToolTip": "QualityAssessment.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAwwA8AAAAQAAAA",
+              "Title": "PredictionForm.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\PredictionForm.cs",
+              "RelativeDocumentMoniker": "PredictionForm.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\PredictionForm.cs",
+              "RelativeToolTip": "PredictionForm.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAowFYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T19:53:50.949Z",
+              "WhenOpened": "2024-03-17T13:37:13.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PredictionForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\PredictionForm.cs",
+              "RelativeDocumentMoniker": "PredictionForm.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\PredictionForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "PredictionForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T13:37:10.04Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAcwKAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T17:57:41.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MinDistanceClassifier.cs",
-              "DocumentMoniker": "E:\\vs_projects\\Classifier\\MinDistanceClassifier.cs",
-              "RelativeDocumentMoniker": "MinDistanceClassifier.cs",
-              "ToolTip": "E:\\vs_projects\\Classifier\\MinDistanceClassifier.cs",
-              "RelativeToolTip": "MinDistanceClassifier.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAA0AAAA",
+              "Title": "QualityAssessment.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\QualityAssessment.cs",
+              "RelativeDocumentMoniker": "QualityAssessment.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\QualityAssessment.cs",
+              "RelativeToolTip": "QualityAssessment.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAmwC4AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T16:29:26.294Z",
+              "WhenOpened": "2024-03-12T19:53:50.949Z",
               "EditorCaption": ""
             },
             {
@@ -82,40 +119,14 @@
               "RelativeDocumentMoniker": "MyObject.cs",
               "ToolTip": "E:\\vs_projects\\Classifier\\MyObject.cs",
               "RelativeToolTip": "MyObject.cs",
-              "ViewState": "AQIAAN0AAAAAAAAAAAAIwKoAAAAAAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwEwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T18:16:20.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "E:\\vs_projects\\Classifier\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "E:\\vs_projects\\Classifier\\MainForm.cs",
-              "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA1wC4AAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T17:57:41.85Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Perceptron.cs",
-              "DocumentMoniker": "E:\\vs_projects\\Classifier\\Perceptron.cs",
-              "RelativeDocumentMoniker": "Perceptron.cs",
-              "ToolTip": "E:\\vs_projects\\Classifier\\Perceptron.cs",
-              "RelativeToolTip": "Perceptron.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T15:23:45.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "E:\\vs_projects\\Classifier\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -133,20 +144,60 @@
               "RelativeDocumentMoniker": "HelloForm.cs",
               "ToolTip": "E:\\vs_projects\\Classifier\\HelloForm.cs",
               "RelativeToolTip": "HelloForm.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAMwBIAAAAJAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAMwBgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T17:22:19.215Z"
+              "WhenOpened": "2024-02-20T17:22:19.215Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Chars.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\Chars.cs",
+              "RelativeDocumentMoniker": "Chars.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\Chars.cs",
+              "RelativeToolTip": "Chars.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAowG0AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T10:59:18.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MinDistanceClassifier.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\MinDistanceClassifier.cs",
+              "RelativeDocumentMoniker": "MinDistanceClassifier.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\MinDistanceClassifier.cs",
+              "RelativeToolTip": "MinDistanceClassifier.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwDIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T16:29:26.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Perceptron.cs",
+              "DocumentMoniker": "E:\\vs_projects\\Classifier\\Perceptron.cs",
+              "RelativeDocumentMoniker": "Perceptron.cs",
+              "ToolTip": "E:\\vs_projects\\Classifier\\Perceptron.cs",
+              "RelativeToolTip": "Perceptron.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T15:23:45.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "E:\\vs_projects\\Classifier\\HelloForm.cs",
               "RelativeDocumentMoniker": "HelloForm.cs",
               "ToolTip": "E:\\vs_projects\\Classifier\\HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "HelloForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T17:21:12.543Z"
+              "WhenOpened": "2024-02-20T17:21:12.543Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]
         }

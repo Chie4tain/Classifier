@@ -5,130 +5,57 @@ using System.Linq;
 
 namespace Classifier
 {
-    class Characteristics
-    {
-        // 0 - Average, 1 - Variance, 2 - InterClassDistance
-        public double[] Weight = new double[3];
-        public double[] Height = new double[3];
-        public double[] Age = new double[3];
-    }
-    public class CLassCharacteristics
-    {
-        string[] Characters = {"Average", "Variance", "Inter Class Distance" };
-        Characteristics characteristics1stClass = new Characteristics();
-        Characteristics characteristics2stClass = new Characteristics();
-
-        double WeightIntraClassDistance;
-        double HeightIntraClassDistance;
-        double AgeIntraClassDistance;
-
-        double EuclideanDistance;
-
-        MyObjects objects;
-
-        string[] arr = { "Weight", "Height", "Age" };
-
-        public CLassCharacteristics(MyObjects ob)
-        {
-            objects = ob;
-        }
-
-        public void SetChars()
-        {
-            for (int i = 1; i < 3; i++)
-            {
-                Characteristics charact = new Characteristics();
-                if (i == 1)
-                    charact = characteristics1stClass;
-                else
-                    charact = characteristics2stClass;
-                for (int j = 0; j < arr.Length; j++)
-                {
-                    switch (j)
-                    {
-                        case 0:
-                            {
-                                charact.Weight[0] = objects.CalculateAverage(i, arr[0]);
-                                charact.Weight[1] = objects.CalculateVariance(i, charact.Weight[0], arr[0]);
-                                charact.Weight[2] = objects.CalculateInterClassDistance(i, arr[0]);
-                            }
-                            break;
-                        case 1:
-                            {
-                                charact.Height[0] = objects.CalculateAverage(i, arr[1]);
-                                charact.Height[1] = objects.CalculateVariance(i, charact.Height[0], arr[1]);
-                                charact.Height[2] = objects.CalculateInterClassDistance(i, arr[1]);
-                            }
-                            break;
-                        case 2:
-                            {
-                                charact.Age[0] = objects.CalculateAverage(i, arr[2]);
-                                charact.Age[1] = objects.CalculateVariance(i, charact.Age[0], arr[2]);
-                                charact.Age[2] = objects.CalculateInterClassDistance(i, arr[2]);
-                            }
-                            break;
-                    }
-
-                }
-            }
-
-            WeightIntraClassDistance = objects.CalculateIntraClassDistance(1, 2, arr[0]);
-            HeightIntraClassDistance = objects.CalculateIntraClassDistance(1, 2, arr[1]);
-            AgeIntraClassDistance = objects.CalculateIntraClassDistance(1, 2, arr[2]);
-        }
-
-        public string returndata()
-        {
-            string result = "";
-            for (int i = 0; i < 2; i++)
-            {
-                Characteristics charact = new Characteristics();
-                if (i == 0)
-                {
-                    charact = characteristics1stClass;
-                    result += "1st Class\n";
-                }
-                else
-                {
-                    charact = characteristics2stClass;
-                    result += "2nd Class\n";
-                }
-                for (int k = 0; k < 3; k++)
-                    for (int j = 0; j < 3; j++)
-                    {
-                        if (k == 0)
-                            result += "Weight -> " + Characters[j] + ": " + charact.Weight[j].ToString() + " \n";
-                        if (k == 1)
-                            result += "Height -> " + Characters[j] + ": " + charact.Height[j].ToString() + " \n";
-                        if (k == 2)
-                            result += "Age -> " + Characters[j] + ": " + charact.Age[j].ToString() + " \n";
-                    }
-            }
-
-            result += "\n" + "Intra Class Distance of Weight: " + WeightIntraClassDistance.ToString() + "\n" +
-                "Intra Class Distance of Height: " + HeightIntraClassDistance.ToString() + "\n" + "Intra Class Distance of Age: " + AgeIntraClassDistance.ToString();
-            return result;
-        }
-    }
-    public class MyObject
+    public abstract class MyObject
     {
         public int Class { get; set; }
-        public double Weight { get; set; }
-        public double Height { get; set; }
-        public int Age { get; set; }
 
-        public MyObject(int _class = 1, double _weight = 0, double _height = 0, int _age = 0)
+        public MyObject(int _class = 1)
         {
             Class = _class;
-            Weight = _weight;
-            Height = _height;
-            Age = _age;
         }
+    }
+    public class MyObject1st : MyObject
+    {
+        public double Char1 { get; set; }
 
+        public MyObject1st(int _class = 1, double _char1 = 0) : base(_class)
+        { Char1 = _char1; }
+    }
+
+    public class MyObject2nd : MyObject1st
+    {
+        public double Char2 { get; set; }
+        public MyObject2nd(int _class = 1, double _char1 = 0, double _char2 = 0) : base(_class, _char1)
+        { Char2 = _char2; }
+    }
+
+    public class MyObject3rd : MyObject2nd
+    {
+        public double Char3 { get; set; }
+
+        public MyObject3rd(int _class = 1, double _char1 = 0, double _char2 = 0, double _char3 = 0) : base(_class, _char1, _char2)
+        { Char3 = _char3; }
+    }
+
+    public class MyObject4th : MyObject3rd
+    {
+        public double Char4 { get; set; }
+
+        public MyObject4th(int _class = 1, double _char1 = 0, double _char2 = 0, double _char3 = 0, double _char4 = 0) : base(_class, _char1, _char2, _char3)
+        { Char4 = _char4; }
+    }
+
+    public class MyObject5th : MyObject4th
+    {
+        public double Char5 { get; set; }
+
+        public MyObject5th(int _class = 1, double _char1 = 0, double _char2 = 0, double _char3 = 0, double _char4 = 0, double _char5 = 0) : base(_class, _char1, _char2, _char3, _char4)
+        { Char5 = _char5; }
     }
 
     public class MyObjects : List<MyObject>
     {
+        public string[] CharsNames;
         public MyObjects(string filename)
         {
             Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -138,15 +65,65 @@ namespace Classifier
             int rowCount = worksheet.UsedRange.Rows.Count;
             int colCount = worksheet.UsedRange.Columns.Count;
 
+            CharsNames = new string[colCount - 1];
+            for (int i = 2; i <= colCount; i++)
+            {
+                CharsNames[i - 2] = (string)(worksheet.Cells[1, i] as Range).Value;
+            }
+
             for (int row = 2; row <= rowCount; row++)
             {
-
-                int classValue = (int)(worksheet.Cells[row, 1] as Range).Value;
-                double weight = (double)(worksheet.Cells[row, 2] as Range).Value;
-                double height = (double)(worksheet.Cells[row, 3] as Range).Value;
-                int age = (int)(worksheet.Cells[row, 4] as Range).Value;
-
-                MyObject obj = new MyObject(classValue, weight, height, age);
+                MyObject obj = null;
+                switch (colCount)
+                {
+                    case 2:
+                        {
+                            int classValue = (int)(worksheet.Cells[row, 1] as Range).Value;
+                            double char1 = (double)(worksheet.Cells[row, 2] as Range).Value;
+                            obj = new MyObject1st(classValue, char1);
+                        }
+                        break;
+                    case 3:
+                        {
+                            int classValue = (int)(worksheet.Cells[row, 1] as Range).Value;
+                            double char1 = (double)(worksheet.Cells[row, 2] as Range).Value;
+                            double char2 = (double)(worksheet.Cells[row, 3] as Range).Value;
+                            obj = new MyObject2nd(classValue, char1, char2);
+                        }
+                        break;
+                    case 4:
+                        {
+                            int classValue = (int)(worksheet.Cells[row, 1] as Range).Value;
+                            double char1 = (double)(worksheet.Cells[row, 2] as Range).Value;
+                            double char2 = (double)(worksheet.Cells[row, 3] as Range).Value;
+                            double char3 = (double)(worksheet.Cells[row, 4] as Range).Value;
+                            obj = new MyObject3rd(classValue, char1, char2, char3);
+                        }
+                        break;
+                    case 5:
+                        {
+                            int classValue = (int)(worksheet.Cells[row, 1] as Range).Value;
+                            double char1 = (double)(worksheet.Cells[row, 2] as Range).Value;
+                            double char2 = (double)(worksheet.Cells[row, 3] as Range).Value;
+                            double char3 = (double)(worksheet.Cells[row, 4] as Range).Value;
+                            double char4 = (double)(worksheet.Cells[row, 5] as Range).Value;
+                            obj = new MyObject4th(classValue, char1, char2, char3, char4);
+                        }
+                        break;
+                    case 6:
+                        {
+                            int classValue = (int)(worksheet.Cells[row, 1] as Range).Value;
+                            double char1 = (double)(worksheet.Cells[row, 2] as Range).Value;
+                            double char2 = (double)(worksheet.Cells[row, 3] as Range).Value;
+                            double char3 = (double)(worksheet.Cells[row, 4] as Range).Value;
+                            double char4 = (double)(worksheet.Cells[row, 5] as Range).Value;
+                            double char5 = (double)(worksheet.Cells[row, 6] as Range).Value;
+                            obj = new MyObject5th(classValue, char1, char2, char3, char4, char5);
+                        }
+                        break;
+                    default:
+                        break;
+                }
                 Add(obj);
             }
 
@@ -156,17 +133,32 @@ namespace Classifier
 
         private double GetCharacteristicValue(MyObject obj, string characteristic)
         {
-            switch (characteristic)
+            double value;
+            if (characteristic == CharsNames[0])
             {
-                case "Weight":
-                    return obj.Weight;
-                case "Height":
-                    return obj.Height;
-                case "Age":
-                    return obj.Age;
-                default:
-                    throw new ArgumentException("Неверная характеристика", nameof(characteristic));
+                value = (obj as MyObject1st).Char1;
             }
+            else if (characteristic == CharsNames[1])
+            {
+                value = (obj as MyObject2nd).Char2;
+            }
+            else if (characteristic == CharsNames[2])
+            {
+                value = (obj as MyObject3rd).Char3;
+            }
+            else if (characteristic == CharsNames[3])
+            {
+                value = (obj as MyObject4th).Char4;
+            }
+            else if (characteristic == CharsNames[4])
+            {
+                value = (obj as MyObject5th).Char5;
+            }
+            else
+            {
+                throw new ArgumentException("Неверная характеристика", nameof(characteristic));
+            }
+            return value;
         }
 
         private int CountObjectsOfClass(int targetClass)
@@ -242,12 +234,6 @@ namespace Classifier
             }
 
             return sumOfDistances / (count1 * count2);
-        }
-
-        public double CalculateEuclideanDistance(MyObject obj1, MyObject obj2)
-        {
-            double distance = Math.Sqrt(Math.Pow(obj1.Weight - obj2.Weight, 2) + Math.Pow(obj1.Height - obj2.Height, 2) + Math.Pow(obj1.Age - obj2.Age, 2));
-            return distance;
         }
     }
 }

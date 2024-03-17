@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using Microsoft.Office.Interop.Excel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Classifier
 {
@@ -23,10 +12,11 @@ namespace Classifier
     public partial class MainForm : Form
     {
         HelloForm helloForm;
+        PredictionForm predictionForm;
         MyObjects objectsList;
         Perceptron perceptron;
         MinDistanceClassifier distanceClassifier;
-        public MainForm( HelloForm form)
+        public MainForm(HelloForm form)
         {
             InitializeComponent();
             helloForm = form;
@@ -40,12 +30,57 @@ namespace Classifier
                 string filePath = oFD.FileName;
                 objectsList = new MyObjects(filePath);
 
-                bindingSource.DataSource = objectsList;
-                dataGridView.DataSource = bindingSource;
+                DGVClear();
+
+                dataGridView.Columns.Add("Class", "Class");
+                for (int i = 0; i < objectsList.CharsNames.Length; i++)
+                {
+                    dataGridView.Columns.Add(objectsList.CharsNames[i], objectsList.CharsNames[i]);
+                }
+
+                for (int i = 0; i < objectsList.Count; i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+
+                    switch (objectsList.CharsNames.Length)
+                    {
+                        case 1:
+                            row.CreateCells(dataGridView, (objectsList[i] as MyObject1st).Class.ToString(), (objectsList[i] as MyObject1st).Char1.ToString());
+                            break;
+                        case 2:
+                            row.CreateCells(dataGridView, (objectsList[i] as MyObject2nd).Class.ToString(), (objectsList[i] as MyObject2nd).Char1.ToString(), (objectsList[i] as MyObject2nd).Char2.ToString());
+                            break;
+                        case 3:
+                            row.CreateCells(dataGridView, (objectsList[i] as MyObject3rd).Class.ToString(), (objectsList[i] as MyObject3rd).Char1.ToString(), (objectsList[i] as MyObject3rd).Char2.ToString(), (objectsList[i] as MyObject3rd).Char3.ToString());
+                            break;
+                        case 4:
+                            row.CreateCells(dataGridView, (objectsList[i] as MyObject4th).Class.ToString(), (objectsList[i] as MyObject4th).Char1.ToString(), (objectsList[i] as MyObject4th).Char2.ToString(), (objectsList[i] as MyObject4th).Char3.ToString(), (objectsList[i] as MyObject4th).Char4.ToString());
+                            break;
+                        case 5:
+                            row.CreateCells(dataGridView, (objectsList[i] as MyObject5th).Class.ToString(), (objectsList[i] as MyObject5th).Char1.ToString(), (objectsList[i] as MyObject5th).Char2.ToString(), (objectsList[i] as MyObject5th).Char3.ToString(), (objectsList[i] as MyObject5th).Char4.ToString(), (objectsList[i] as MyObject5th).Char5.ToString());
+                            break;
+                    }
+                    dataGridView.Rows.Add(row);
+                }
                 btnStart.Enabled = true;
                 btnTrain.Enabled = true;
+                btnPredict.Enabled = true;
                 distanceClassifier = new MinDistanceClassifier(objectsList);
             }
+        }
+
+        private void DGVClear()
+        {
+            dataGridView.Columns.Clear();
+            dataGridView.Rows.Clear();
+            dataGridView1st.Columns.Clear();
+            dataGridView1st.Rows.Clear();
+            dataGridView2nd.Columns.Clear();
+            dataGridView2nd.Rows.Clear();
+            dataGridViewWeights.Columns.Clear();
+            dataGridViewWeights.Rows.Clear();
+            dataGridViewGenChars.Columns.Clear();
+            dataGridViewGenChars.Rows.Clear();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,7 +97,56 @@ namespace Classifier
         {
             CLassCharacteristics characteristics = new CLassCharacteristics(objectsList);
             characteristics.SetChars();
-            label1.Text = characteristics.returndata();
+            FillDgv(dataGridView1st, characteristics, characteristics.charlist1st);
+            FillDgv(dataGridView2nd, characteristics, characteristics.charlist2nd);
+            dataGridViewGenChars.Columns.Add("", "");
+            for (int i = 0; i < objectsList.CharsNames.Length; i++)
+            {
+                dataGridViewGenChars.Columns.Add(objectsList.CharsNames[i], objectsList.CharsNames[i]);
+            }
+            DataGridViewRow row = new DataGridViewRow();
+
+            switch (objectsList.CharsNames.Length)
+            {
+                case 1:
+                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString());
+                    break;
+                case 2:
+                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
+                        characteristics.IntraClassDistances[1].ToString());
+                    break;
+                case 3:
+                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
+                        characteristics.IntraClassDistances[1].ToString(), characteristics.IntraClassDistances[2].ToString());
+                    break;
+                case 4:
+                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
+                        characteristics.IntraClassDistances[1].ToString(), characteristics.IntraClassDistances[2].ToString(),
+                        characteristics.IntraClassDistances[3].ToString());
+                    break;
+                case 5:
+                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
+                        characteristics.IntraClassDistances[1].ToString(), characteristics.IntraClassDistances[2].ToString(),
+                        characteristics.IntraClassDistances[3].ToString(), characteristics.IntraClassDistances[4].ToString());
+                    break;
+            }
+            dataGridViewGenChars.Rows.Add(row);
+        }
+        private void FillDgv(Control c, CLassCharacteristics chars, Charlist chrlst)
+        {
+            DataGridView dtg = c as DataGridView;
+            dtg.Columns.Add("Characteristic", "Characteristic");
+            for (int i = 0; i < chars.Characters.Length; i++)
+            {
+                dtg.Columns.Add(chars.Characters[i], chars.Characters[i]);
+            }
+            for (int i = 0; i < objectsList.CharsNames.Length; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dtg, objectsList.CharsNames[i].ToString(), chrlst[i][0], chrlst[i][1], chrlst[i][2]);
+
+                dtg.Rows.Add(row);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,7 +157,9 @@ namespace Classifier
 
         private void btnTrain_Click(object sender, EventArgs e)
         {
-            int numberOfInputs = 3;
+            dataGridViewWeights.Columns.Clear();
+            dataGridViewWeights.Rows.Clear();
+            int numberOfInputs = objectsList.CharsNames.Length;
             double learningRate = 0.1;
             int numberOfIterations = 10000;
 
@@ -81,117 +167,27 @@ namespace Classifier
 
             perceptron.Train(objectsList, numberOfIterations);
 
-            string s = perceptron.weights[0].ToString() + " " + perceptron.weights[1].ToString() + " " + perceptron.weights[2].ToString();
-            lblweights.Text = "Weights: " + s;
-            textBoxWeight.Enabled = true;
-            textBoxHeight.Enabled = true;
-            textBoxAge.Enabled = true;
+            for (int i = 0; i < objectsList.CharsNames.Length; i++)
+            {
+                dataGridViewWeights.Columns.Add(objectsList.CharsNames[i], objectsList.CharsNames[i]);
+            }
+            DataGridViewRow row = new DataGridViewRow();
+            switch (perceptron.weights.Count())
+            {
+                case 1: row.CreateCells(dataGridViewWeights, perceptron.weights[0].ToString()); break;
+                case 2: row.CreateCells(dataGridViewWeights, perceptron.weights[0].ToString(), perceptron.weights[1].ToString()); break;
+                case 3: row.CreateCells(dataGridViewWeights, perceptron.weights[0].ToString(), perceptron.weights[1].ToString(), perceptron.weights[2].ToString()); break;
+                case 4: row.CreateCells(dataGridViewWeights, perceptron.weights[0].ToString(), perceptron.weights[1].ToString(), perceptron.weights[2].ToString(), perceptron.weights[3].ToString()); break;
+                case 5: row.CreateCells(dataGridViewWeights, perceptron.weights[0].ToString(), perceptron.weights[1].ToString(), perceptron.weights[2].ToString(), perceptron.weights[3].ToString(), perceptron.weights[4].ToString()); break;
+            }
 
-            btnPredict.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
+            dataGridViewWeights.Rows.Add(row);
         }
 
         private void btnPredict_Click(object sender, EventArgs e)
         {
-            double weight, height;
-            int age;
-
-            (weight, height, age) = ValidateInput();
-            if (weight > -1)
-            {
-                PreddictbyPerceptron(weight, height, age);
-            }
-        }
-
-        private (double,double, int) ValidateInput()
-        {
-            double weight, height;
-            int age;
-
-            if (!double.TryParse(textBoxWeight.Text, out weight) || weight <= 0)
-            {
-                MessageBox.Show("Введите корректное значение веса.");
-                textBoxWeight.Focus();
-                return (-1, -1, -1);
-            }
-
-            if (!double.TryParse(textBoxHeight.Text, out height) || height <= 0)
-            {
-                MessageBox.Show("Введите корректное значение роста.");
-                textBoxHeight.Focus();
-                return (-1, -1, -1);
-            }
-
-            if (!int.TryParse(textBoxAge.Text, out age) || age < 0)
-            {
-                MessageBox.Show("Введите корректное значение возраста.");
-                textBoxAge.Focus();
-                return (-1, -1, -1);
-            }
-
-            // Создание объекта testObject после успешной валидации
-            return (weight, height, age);
-        }
-
-        private void PreddictbyPerceptron(double weight, double height, int age)
-        {
-            MyObject testObject = new MyObject(default, weight, height, age);
-
-            int result = perceptron.Classify(testObject);
-
-            testObject.Class = result;
-
-            label2.Text = "Prediction result: " + result;
-        }
-
-        private void PreddictbyMinDistance(double weight, double height, int age)
-        {
-            MyObject testObject = new MyObject(default, weight, height, age);
-
-            int result = distanceClassifier.Classify(testObject);
-
-            testObject.Class = result;
-
-            label7.Text = "Prediction result: " + result;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            double weight, height;
-            int age;
-
-            (weight, height, age) = ValidateInput();
-            if (weight > -1)
-            {
-                PreddictbyMinDistance(weight, height, age);
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            QualityAssessment qualityAssessment = new QualityAssessment();
-
-            qualityAssessment.CalculateMetrics(objectsList, perceptron);
-            double[] perceptparam = new double[3];
-            perceptparam[0] = qualityAssessment.CalculateSensitivity();
-            perceptparam[1] = qualityAssessment.CalculateSpecificity();
-            perceptparam[2] = qualityAssessment.CalculateAccuracy();
-
-            qualityAssessment.CalculateMetrics(objectsList, distanceClassifier);
-
-            double[] mindistparam = new double[3];
-            mindistparam[0] = qualityAssessment.CalculateSensitivity();
-            mindistparam[1] = qualityAssessment.CalculateSpecificity();
-            mindistparam[2] = qualityAssessment.CalculateAccuracy();
-
-            string s = "Perceptron:\n Sensitivity: " + perceptparam[0] + "\n" + "Specificity: " + perceptparam[1] + "\n" + "Accuracy: " + perceptparam[2];
-
-            lblpercParams.Text = s;
-
-            s = "Min Distance:\n Sensitivity: " + mindistparam[0] + "\n" + "Specificity: " + mindistparam[1] + "\n" + "Accuracy: " + mindistparam[2];
-
-            lblmindistParams.Text = s;
+            predictionForm = new PredictionForm(objectsList, perceptron, distanceClassifier);
+            predictionForm.Show();
         }
     }
 }

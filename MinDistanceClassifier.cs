@@ -34,11 +34,23 @@ namespace Classifier
 
         private double CalculateDistance(MyObject obj1, MyObject obj2)
         {
-            double weightDiff = obj1.Weight - obj2.Weight;
-            double heightDiff = obj1.Height - obj2.Height;
-            double ageDiff = obj1.Age - obj2.Age;
+            double sum = 0;
+            switch(trainingData.CharsNames.Length)
+            {
+                case 1: sum = Math.Pow((obj1 as MyObject1st).Char1 - (obj2 as MyObject1st).Char1, 2); break;
+                case 2: sum = Math.Pow((obj1 as MyObject2nd).Char1 - (obj2 as MyObject2nd).Char1, 2) + Math.Pow((obj1 as MyObject2nd).Char2 - (obj2 as MyObject2nd).Char2, 2); break;
+                case 3: sum = Math.Pow((obj1 as MyObject3rd).Char1 - (obj2 as MyObject3rd).Char1, 2) + Math.Pow((obj1 as MyObject3rd).Char2 - (obj2 as MyObject3rd).Char2, 2) +
+                        Math.Pow((obj1 as MyObject3rd).Char3 - (obj2 as MyObject3rd).Char3, 2); break;
+                case 4:
+                    sum = Math.Pow((obj1 as MyObject4th).Char1 - (obj2 as MyObject4th).Char1, 2) + Math.Pow((obj1 as MyObject4th).Char2 - (obj2 as MyObject4th).Char2, 2) +
+                    Math.Pow((obj1 as MyObject4th).Char3 - (obj2 as MyObject4th).Char3, 2) + Math.Pow((obj1 as MyObject4th).Char4 - (obj2 as MyObject4th).Char4, 2); break;
+                case 5:
+                    sum = Math.Pow((obj1 as MyObject5th).Char1 - (obj2 as MyObject5th).Char1, 2) + Math.Pow((obj1 as MyObject5th).Char2 - (obj2 as MyObject5th).Char2, 2) +
+                    Math.Pow((obj1 as MyObject5th).Char3 - (obj2 as MyObject5th).Char3, 2) + Math.Pow((obj1 as MyObject5th).Char4 - (obj2 as MyObject5th).Char4, 2) +
+                    Math.Pow((obj1 as MyObject5th).Char5 - (obj2 as MyObject5th).Char5, 2); break;
+            }
 
-            return Math.Sqrt(weightDiff * weightDiff + heightDiff * heightDiff + ageDiff * ageDiff);
+            return Math.Sqrt(sum);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace Classifier
 {
@@ -8,6 +9,7 @@ namespace Classifier
         public double[] weights;
         private double bias;
         private double learningRate;
+        private int CharsNum;
 
         public Perceptron(int numberOfInputs, double learningRate)
         {
@@ -51,11 +53,21 @@ namespace Classifier
 
         public void Train(MyObjects objects, int numberOfIterations)
         {
+            CharsNum = objects.CharsNames.Length;
+
             for (int i = 0; i < numberOfIterations; i++)
             {
                 for (int j = 0; j < objects.Count; j++)
                 {
-                    double[] inputs = new double[] { objects[j].Weight, objects[j].Height, objects[j].Age };
+                    double[] inputs = new double[] { };
+                    switch (objects.CharsNames.Length)
+                    {
+                        case 1: inputs = new double[] { (objects[j] as MyObject1st).Char1}; break;
+                        case 2: inputs = new double[] { (objects[j] as MyObject2nd).Char1, (objects[j] as MyObject2nd).Char2 }; break;
+                        case 3: inputs = new double[] { (objects[j] as MyObject3rd).Char1, (objects[j] as MyObject3rd).Char2, (objects[j] as MyObject3rd).Char3 }; break;
+                        case 4: inputs = new double[] { (objects[j] as MyObject4th).Char1, (objects[j] as MyObject4th).Char2, (objects[j] as MyObject4th).Char3, (objects[j] as MyObject4th).Char4 }; break;
+                        case 5: inputs = new double[] { (objects[j] as MyObject5th).Char1, (objects[j] as MyObject5th).Char2, (objects[j] as MyObject5th).Char3, (objects[j] as MyObject5th).Char4, (objects[j] as MyObject5th).Char5 }; break;
+                    }
                     double sum = DotProduct(inputs) + bias;
                     double output = ActivationFunction(sum);
                     double error = objects[j].Class - output;
@@ -72,7 +84,15 @@ namespace Classifier
 
         public int Classify(MyObject obj)
         {
-            double[] inputs = new double[] { obj.Weight, obj.Height, obj.Age };
+            double[] inputs = new double[] { };
+            switch (CharsNum)
+            {
+                case 1: inputs = new double[] { (obj as MyObject1st).Char1 }; break;
+                case 2: inputs = new double[] { (obj as MyObject2nd).Char1, (obj as MyObject2nd).Char2 }; break;
+                case 3: inputs = new double[] { (obj as MyObject3rd).Char1, (obj as MyObject3rd).Char2, (obj as MyObject3rd).Char3 }; break;
+                case 4: inputs = new double[] { (obj as MyObject4th).Char1, (obj as MyObject4th).Char2, (obj as MyObject4th).Char3, (obj as MyObject4th).Char4 }; break;
+                case 5: inputs = new double[] { (obj as MyObject5th).Char1, (obj as MyObject5th).Char2, (obj as MyObject5th).Char3, (obj as MyObject5th).Char4, (obj as MyObject5th).Char5 }; break;
+            }
             double sum = DotProduct(inputs) + bias;
             return ActivationFunction(sum);
         }

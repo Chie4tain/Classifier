@@ -9,3 +9,4 @@ E:\vs_projects\Classifier\obj\Debug\Classifier.csproj.GenerateResource.cache
 E:\vs_projects\Classifier\obj\Debug\Classifier.csproj.CoreCompileInputs.cache
 E:\vs_projects\Classifier\obj\Debug\Classifier.exe
 E:\vs_projects\Classifier\obj\Debug\Classifier.pdb
+E:\vs_projects\Classifier\obj\Debug\Classifier.PredictionForm.resources
