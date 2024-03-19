@@ -166,7 +166,6 @@ namespace Classifier
             return this.Count(obj => obj.Class == targetClass);
         }
 
-        // среднее значение
         public double CalculateAverage(int targetClass, string characteristic)
         {
             var classObjects = this.Where(obj => obj.Class == targetClass);
@@ -191,49 +190,16 @@ namespace Classifier
             return sumOfSquares / count;
         }
 
-        public double CalculateInterClassDistance(int targetClass, string characteristic)
+        public double CalculateIntraClassDistance(Charlist list_1st, Charlist list_2nd)
         {
-            var classObjects = this.Where(obj => obj.Class == targetClass);
-            int count = classObjects.Count();
+            double result = 0.0;
 
-            if (count <= 1)
-                return 0.0;
-
-            double sumOfDistances = 0.0;
-            for (int i = 0; i < count; i++)
+            for(int i = 0; i < CharsNames.Length; i++)
             {
-                for (int j = i + 1; j < count; j++)
-                {
-                    double distance = Math.Abs(GetCharacteristicValue(classObjects.ElementAt(i), characteristic) - GetCharacteristicValue(classObjects.ElementAt(j), characteristic));
-                    sumOfDistances += distance;
-                }
+                result += Math.Abs(list_1st[i][0] - list_2nd[i][0]);
             }
 
-            return sumOfDistances / (count * (count - 1) / 2);
-        }
-
-        public double CalculateIntraClassDistance(int class1, int class2, string characteristic)
-        {
-            var class1Objects = this.Where(obj => obj.Class == class1);
-            var class2Objects = this.Where(obj => obj.Class == class2);
-
-            int count1 = class1Objects.Count();
-            int count2 = class2Objects.Count();
-
-            if (count1 == 0 || count2 == 0)
-                return 0.0;
-
-            double sumOfDistances = 0.0;
-            foreach (var obj1 in class1Objects)
-            {
-                foreach (var obj2 in class2Objects)
-                {
-                    double distance = Math.Abs(GetCharacteristicValue(obj1, characteristic) - GetCharacteristicValue(obj2, characteristic));
-                    sumOfDistances += distance;
-                }
-            }
-
-            return sumOfDistances / (count1 * count2);
+            return result;
         }
     }
 }

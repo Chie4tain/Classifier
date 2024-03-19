@@ -27,6 +27,8 @@ namespace Classifier
             oFD.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
             if (oFD.ShowDialog() == DialogResult.OK)
             {
+                btnPredict.Enabled = false;
+
                 string filePath = oFD.FileName;
                 objectsList = new MyObjects(filePath);
 
@@ -64,8 +66,14 @@ namespace Classifier
                 }
                 btnStart.Enabled = true;
                 btnTrain.Enabled = true;
-                btnPredict.Enabled = true;
+                numericUpDownIters.Enabled = true;
+                numericUpDownLearninrate.Enabled = true;
+
                 distanceClassifier = new MinDistanceClassifier(objectsList);
+
+                if(predictionForm != null)
+                    predictionForm.Close();
+
             }
         }
 
@@ -79,58 +87,26 @@ namespace Classifier
             dataGridView2nd.Rows.Clear();
             dataGridViewWeights.Columns.Clear();
             dataGridViewWeights.Rows.Clear();
-            dataGridViewGenChars.Columns.Clear();
-            dataGridViewGenChars.Rows.Clear();
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            HelpForm help = new HelpForm();
+            help.Show();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             CLassCharacteristics characteristics = new CLassCharacteristics(objectsList);
             characteristics.SetChars();
+
+            lblInter1ClassDistance.Text = "Inter 1st Class Distance: " + $"{characteristics.characteristics1stClass.InterClassDistance}";
+            lblInter2ClassDistance.Text = "Inter 2nd Class Distance: " + $"{characteristics.characteristics2stClass.InterClassDistance}";
+
             FillDgv(dataGridView1st, characteristics, characteristics.charlist1st);
             FillDgv(dataGridView2nd, characteristics, characteristics.charlist2nd);
-            dataGridViewGenChars.Columns.Add("", "");
-            for (int i = 0; i < objectsList.CharsNames.Length; i++)
-            {
-                dataGridViewGenChars.Columns.Add(objectsList.CharsNames[i], objectsList.CharsNames[i]);
-            }
-            DataGridViewRow row = new DataGridViewRow();
 
-            switch (objectsList.CharsNames.Length)
-            {
-                case 1:
-                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString());
-                    break;
-                case 2:
-                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
-                        characteristics.IntraClassDistances[1].ToString());
-                    break;
-                case 3:
-                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
-                        characteristics.IntraClassDistances[1].ToString(), characteristics.IntraClassDistances[2].ToString());
-                    break;
-                case 4:
-                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
-                        characteristics.IntraClassDistances[1].ToString(), characteristics.IntraClassDistances[2].ToString(),
-                        characteristics.IntraClassDistances[3].ToString());
-                    break;
-                case 5:
-                    row.CreateCells(dataGridViewGenChars, "Intra Class Distance", characteristics.IntraClassDistances[0].ToString(),
-                        characteristics.IntraClassDistances[1].ToString(), characteristics.IntraClassDistances[2].ToString(),
-                        characteristics.IntraClassDistances[3].ToString(), characteristics.IntraClassDistances[4].ToString());
-                    break;
-            }
-            dataGridViewGenChars.Rows.Add(row);
+            lblIntraClassDistance.Text = "Intra Class Distance: " + $"{characteristics.IntraClassDistances}";
         }
         private void FillDgv(Control c, CLassCharacteristics chars, Charlist chrlst)
         {
@@ -143,7 +119,7 @@ namespace Classifier
             for (int i = 0; i < objectsList.CharsNames.Length; i++)
             {
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dtg, objectsList.CharsNames[i].ToString(), chrlst[i][0], chrlst[i][1], chrlst[i][2]);
+                row.CreateCells(dtg, objectsList.CharsNames[i].ToString(), chrlst[i][0], chrlst[i][1]);
 
                 dtg.Rows.Add(row);
             }
@@ -160,8 +136,8 @@ namespace Classifier
             dataGridViewWeights.Columns.Clear();
             dataGridViewWeights.Rows.Clear();
             int numberOfInputs = objectsList.CharsNames.Length;
-            double learningRate = 0.1;
-            int numberOfIterations = 10000;
+            double learningRate = (double)numericUpDownLearninrate.Value;
+            int numberOfIterations = (int)numericUpDownIters.Value;
 
             perceptron = new Perceptron(numberOfInputs, learningRate);
 
@@ -182,12 +158,18 @@ namespace Classifier
             }
 
             dataGridViewWeights.Rows.Add(row);
+            btnPredict.Enabled = true;
         }
 
         private void btnPredict_Click(object sender, EventArgs e)
         {
             predictionForm = new PredictionForm(objectsList, perceptron, distanceClassifier);
             predictionForm.Show();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

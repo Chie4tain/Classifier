@@ -73,7 +73,7 @@ namespace Classifier
 
             testObject.Class = result;
 
-            initDgvRes(dataGridViewresperc, result);
+            initDgvRes(lblResPerc, result);
         }
 
         private void PredictbyMinDistance()
@@ -84,7 +84,7 @@ namespace Classifier
 
             testObject.Class = result;
 
-            initDgvRes(dataGridViewresdist, result);
+            initDgvRes(lblResDist, result);
         }
 
         private MyObject InitObject()
@@ -101,14 +101,9 @@ namespace Classifier
             return obj;
         }
 
-        private void initDgvRes(DataGridView dgv, int res)
+        private void initDgvRes(Label lbl, int res)
         {
-            dgv.Rows.Clear();
-            dgv.Columns.Clear();
-            dgv.Columns.Add("Result", "Result");
-            DataGridViewRow row = new DataGridViewRow();
-            row.CreateCells(dgv, res.ToString());
-            dgv.Rows.Add(row);
+            lbl.Text = "Result: " + $"{res}" + " Class";
         }
         private bool ValidateInput()
         {

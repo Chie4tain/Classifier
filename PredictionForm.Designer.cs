@@ -31,15 +31,13 @@
             this.Predictperc = new System.Windows.Forms.Button();
             this.predictMindistance = new System.Windows.Forms.Button();
             this.pnlTextBoxes = new System.Windows.Forms.Panel();
-            this.dataGridViewresperc = new System.Windows.Forms.DataGridView();
-            this.dataGridViewresdist = new System.Windows.Forms.DataGridView();
             this.dataGridViewdist = new System.Windows.Forms.DataGridView();
             this.dataGridViewperc = new System.Windows.Forms.DataGridView();
             this.btnQualAssess = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewresperc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewresdist)).BeginInit();
+            this.lblResPerc = new System.Windows.Forms.Label();
+            this.lblResDist = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewdist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewperc)).BeginInit();
             this.SuspendLayout();
@@ -70,28 +68,6 @@
             this.pnlTextBoxes.Name = "pnlTextBoxes";
             this.pnlTextBoxes.Size = new System.Drawing.Size(776, 75);
             this.pnlTextBoxes.TabIndex = 2;
-            // 
-            // dataGridViewresperc
-            // 
-            this.dataGridViewresperc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewresperc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewresperc.Location = new System.Drawing.Point(469, 193);
-            this.dataGridViewresperc.Name = "dataGridViewresperc";
-            this.dataGridViewresperc.RowHeadersWidth = 51;
-            this.dataGridViewresperc.RowTemplate.Height = 24;
-            this.dataGridViewresperc.Size = new System.Drawing.Size(138, 57);
-            this.dataGridViewresperc.TabIndex = 3;
-            // 
-            // dataGridViewresdist
-            // 
-            this.dataGridViewresdist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewresdist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewresdist.Location = new System.Drawing.Point(650, 193);
-            this.dataGridViewresdist.Name = "dataGridViewresdist";
-            this.dataGridViewresdist.RowHeadersWidth = 51;
-            this.dataGridViewresdist.RowTemplate.Height = 24;
-            this.dataGridViewresdist.Size = new System.Drawing.Size(138, 57);
-            this.dataGridViewresdist.TabIndex = 4;
             // 
             // dataGridViewdist
             // 
@@ -146,25 +122,43 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "MinDistance";
             // 
+            // lblResPerc
+            // 
+            this.lblResPerc.AutoSize = true;
+            this.lblResPerc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblResPerc.Location = new System.Drawing.Point(462, 202);
+            this.lblResPerc.Name = "lblResPerc";
+            this.lblResPerc.Size = new System.Drawing.Size(93, 29);
+            this.lblResPerc.TabIndex = 10;
+            this.lblResPerc.Text = "Result: ";
+            // 
+            // lblResDist
+            // 
+            this.lblResDist.AutoSize = true;
+            this.lblResDist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblResDist.Location = new System.Drawing.Point(645, 202);
+            this.lblResDist.Name = "lblResDist";
+            this.lblResDist.Size = new System.Drawing.Size(93, 29);
+            this.lblResDist.TabIndex = 11;
+            this.lblResDist.Text = "Result: ";
+            // 
             // PredictionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 342);
+            this.Controls.Add(this.lblResDist);
+            this.Controls.Add(this.lblResPerc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQualAssess);
             this.Controls.Add(this.dataGridViewperc);
             this.Controls.Add(this.dataGridViewdist);
-            this.Controls.Add(this.dataGridViewresdist);
-            this.Controls.Add(this.dataGridViewresperc);
             this.Controls.Add(this.pnlTextBoxes);
             this.Controls.Add(this.predictMindistance);
             this.Controls.Add(this.Predictperc);
             this.Name = "PredictionForm";
             this.Text = "PredictionForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewresperc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewresdist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewdist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewperc)).EndInit();
             this.ResumeLayout(false);
@@ -177,12 +171,12 @@
         private System.Windows.Forms.Button Predictperc;
         private System.Windows.Forms.Button predictMindistance;
         private System.Windows.Forms.Panel pnlTextBoxes;
-        private System.Windows.Forms.DataGridView dataGridViewresperc;
-        private System.Windows.Forms.DataGridView dataGridViewresdist;
         private System.Windows.Forms.DataGridView dataGridViewdist;
         private System.Windows.Forms.DataGridView dataGridViewperc;
         private System.Windows.Forms.Button btnQualAssess;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblResPerc;
+        private System.Windows.Forms.Label lblResDist;
     }
 }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oFD = new System.Windows.Forms.OpenFileDialog();
             this.sFD = new System.Windows.Forms.SaveFileDialog();
@@ -46,15 +45,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView2nd = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridViewGenChars = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridViewWeights = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPredict = new System.Windows.Forms.Button();
+            this.lblIntraClassDistance = new System.Windows.Forms.Label();
+            this.lblInter1ClassDistance = new System.Windows.Forms.Label();
+            this.lblInter2ClassDistance = new System.Windows.Forms.Label();
+            this.numericUpDownLearninrate = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownIters = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainMenu.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -62,10 +65,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1st)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2nd)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenChars)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeights)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLearninrate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,32 +77,24 @@
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(1374, 28);
+            this.MainMenu.Size = new System.Drawing.Size(1420, 30);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -167,7 +162,7 @@
             // 
             this.lblweights.AutoSize = true;
             this.lblweights.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblweights.Location = new System.Drawing.Point(12, 360);
+            this.lblweights.Location = new System.Drawing.Point(585, 362);
             this.lblweights.Name = "lblweights";
             this.lblweights.Size = new System.Drawing.Size(277, 29);
             this.lblweights.TabIndex = 17;
@@ -177,9 +172,9 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.dataGridView1st);
-            this.panel2.Location = new System.Drawing.Point(746, 77);
+            this.panel2.Location = new System.Drawing.Point(746, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(304, 280);
+            this.panel2.Size = new System.Drawing.Size(304, 195);
             this.panel2.TabIndex = 22;
             // 
             // dataGridView1st
@@ -191,7 +186,7 @@
             this.dataGridView1st.Name = "dataGridView1st";
             this.dataGridView1st.RowHeadersWidth = 51;
             this.dataGridView1st.RowTemplate.Height = 24;
-            this.dataGridView1st.Size = new System.Drawing.Size(304, 280);
+            this.dataGridView1st.Size = new System.Drawing.Size(304, 195);
             this.dataGridView1st.TabIndex = 0;
             // 
             // label8
@@ -208,9 +203,9 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.dataGridView2nd);
-            this.panel3.Location = new System.Drawing.Point(1067, 77);
+            this.panel3.Location = new System.Drawing.Point(1067, 109);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(304, 280);
+            this.panel3.Size = new System.Drawing.Size(304, 195);
             this.panel3.TabIndex = 23;
             // 
             // dataGridView2nd
@@ -222,29 +217,8 @@
             this.dataGridView2nd.Name = "dataGridView2nd";
             this.dataGridView2nd.RowHeadersWidth = 51;
             this.dataGridView2nd.RowTemplate.Height = 24;
-            this.dataGridView2nd.Size = new System.Drawing.Size(304, 280);
+            this.dataGridView2nd.Size = new System.Drawing.Size(304, 195);
             this.dataGridView2nd.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.AutoScroll = true;
-            this.panel4.Controls.Add(this.dataGridViewGenChars);
-            this.panel4.Location = new System.Drawing.Point(746, 392);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(625, 68);
-            this.panel4.TabIndex = 24;
-            // 
-            // dataGridViewGenChars
-            // 
-            this.dataGridViewGenChars.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewGenChars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGenChars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewGenChars.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewGenChars.Name = "dataGridViewGenChars";
-            this.dataGridViewGenChars.RowHeadersWidth = 51;
-            this.dataGridViewGenChars.RowTemplate.Height = 24;
-            this.dataGridViewGenChars.Size = new System.Drawing.Size(625, 68);
-            this.dataGridViewGenChars.TabIndex = 0;
             // 
             // label9
             // 
@@ -260,7 +234,7 @@
             // 
             this.panel5.AutoScroll = true;
             this.panel5.Controls.Add(this.dataGridViewWeights);
-            this.panel5.Location = new System.Drawing.Point(12, 392);
+            this.panel5.Location = new System.Drawing.Point(585, 394);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(465, 68);
             this.panel5.TabIndex = 25;
@@ -277,16 +251,6 @@
             this.dataGridViewWeights.Size = new System.Drawing.Size(465, 68);
             this.dataGridViewWeights.TabIndex = 0;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label10.Location = new System.Drawing.Point(741, 360);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(284, 29);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "General Characteristics:";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -296,10 +260,6 @@
             this.label11.Size = new System.Drawing.Size(161, 29);
             this.label11.TabIndex = 27;
             this.label11.Text = "Your DataSet:";
-            // 
-            // bindingSource
-            // 
-            this.bindingSource.DataSource = typeof(Classifier.MyObjects);
             // 
             // btnPredict
             // 
@@ -313,17 +273,128 @@
             this.btnPredict.UseVisualStyleBackColor = true;
             this.btnPredict.Click += new System.EventHandler(this.btnPredict_Click);
             // 
+            // lblIntraClassDistance
+            // 
+            this.lblIntraClassDistance.AutoSize = true;
+            this.lblIntraClassDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblIntraClassDistance.Location = new System.Drawing.Point(741, 328);
+            this.lblIntraClassDistance.Name = "lblIntraClassDistance";
+            this.lblIntraClassDistance.Size = new System.Drawing.Size(236, 29);
+            this.lblIntraClassDistance.TabIndex = 29;
+            this.lblIntraClassDistance.Text = "Intra Class Distance: ";
+            // 
+            // lblInter1ClassDistance
+            // 
+            this.lblInter1ClassDistance.AutoSize = true;
+            this.lblInter1ClassDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblInter1ClassDistance.Location = new System.Drawing.Point(741, 77);
+            this.lblInter1ClassDistance.Name = "lblInter1ClassDistance";
+            this.lblInter1ClassDistance.Size = new System.Drawing.Size(228, 25);
+            this.lblInter1ClassDistance.TabIndex = 30;
+            this.lblInter1ClassDistance.Text = "Inter 1st Class Distance: ";
+            // 
+            // lblInter2ClassDistance
+            // 
+            this.lblInter2ClassDistance.AutoSize = true;
+            this.lblInter2ClassDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblInter2ClassDistance.Location = new System.Drawing.Point(1062, 77);
+            this.lblInter2ClassDistance.Name = "lblInter2ClassDistance";
+            this.lblInter2ClassDistance.Size = new System.Drawing.Size(235, 25);
+            this.lblInter2ClassDistance.TabIndex = 31;
+            this.lblInter2ClassDistance.Text = "Inter 2nd Class Distance: ";
+            // 
+            // numericUpDownLearninrate
+            // 
+            this.numericUpDownLearninrate.DecimalPlaces = 2;
+            this.numericUpDownLearninrate.Enabled = false;
+            this.numericUpDownLearninrate.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDownLearninrate.Location = new System.Drawing.Point(485, 394);
+            this.numericUpDownLearninrate.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownLearninrate.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownLearninrate.Name = "numericUpDownLearninrate";
+            this.numericUpDownLearninrate.Size = new System.Drawing.Size(94, 22);
+            this.numericUpDownLearninrate.TabIndex = 32;
+            this.numericUpDownLearninrate.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
+            // numericUpDownIters
+            // 
+            this.numericUpDownIters.Enabled = false;
+            this.numericUpDownIters.Location = new System.Drawing.Point(485, 440);
+            this.numericUpDownIters.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownIters.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownIters.Name = "numericUpDownIters";
+            this.numericUpDownIters.Size = new System.Drawing.Size(94, 22);
+            this.numericUpDownIters.TabIndex = 33;
+            this.numericUpDownIters.Value = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(202, 387);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 29);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Learning Rate: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Location = new System.Drawing.Point(202, 431);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(209, 29);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Iteration\'s Count: ";
+            // 
+            // bindingSource
+            // 
+            this.bindingSource.DataSource = typeof(Classifier.MyObjects);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 562);
+            this.ClientSize = new System.Drawing.Size(1420, 571);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.numericUpDownIters);
+            this.Controls.Add(this.numericUpDownLearninrate);
+            this.Controls.Add(this.lblInter2ClassDistance);
+            this.Controls.Add(this.lblInter1ClassDistance);
+            this.Controls.Add(this.lblIntraClassDistance);
             this.Controls.Add(this.btnPredict);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
@@ -336,6 +407,7 @@
             this.MainMenuStrip = this.MainMenu;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.panel.ResumeLayout(false);
@@ -344,10 +416,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1st)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2nd)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenChars)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWeights)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLearninrate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -358,7 +430,6 @@
 
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog oFD;
         private System.Windows.Forms.SaveFileDialog sFD;
@@ -374,13 +445,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView2nd;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridViewGenChars;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridViewWeights;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnPredict;
+        private System.Windows.Forms.Label lblIntraClassDistance;
+        private System.Windows.Forms.Label lblInter1ClassDistance;
+        private System.Windows.Forms.Label lblInter2ClassDistance;
+        private System.Windows.Forms.NumericUpDown numericUpDownLearninrate;
+        private System.Windows.Forms.NumericUpDown numericUpDownIters;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
